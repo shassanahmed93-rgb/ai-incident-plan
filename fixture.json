@@ -1,0 +1,9 @@
+{
+  "incident": "account_compromise",
+  "severity": "high",
+  "lead": "SOC lead",
+  "evidence": [
+    "Authentication logs",
+    "MFA challenge history"
+  ]
+}
