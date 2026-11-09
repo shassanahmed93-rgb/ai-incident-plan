@@ -8,7 +8,7 @@
     &quot;Authentication logs&quot;,
     &quot;MFA challenge history&quot;
   ]
-}</textarea><div class="actions"><button id="run">Run lab</button><button class="secondary" id="reset">Reset fixture</button></div></div><div class="card"><h2>Evidence output</h2><pre id="output" aria-live="polite"></pre><div class="actions"><button class="secondary" id="save">Download JSON</button></div></div></section></main><script>
+}</textarea><div class="actions"><button id="run">Run lab</button><button class="secondary" id="reset">Reset fixture</button><button class="secondary" id="compare">Load comparison</button></div></div><div class="card"><h2>Evidence output</h2><pre id="output" aria-live="polite"></pre><div class="actions"><button class="secondary" id="save">Download JSON</button></div></div></section><section class="card" style="margin-top:18px"><p class="tag">What this demonstrates</p><h2>Draft a playbook with evidence preservation and review gates</h2><p>Switch from account compromise to cloud exposure and inspect how containment changes. Both paths preserve evidence before changes and produce a draft for the incident lead to validate.</p><a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final">Reference guidance</a></section></main><script>
 "use strict";
 function analyze(input) {
   const actions = {
@@ -39,6 +39,7 @@ function run() {
   document.getElementById("save").disabled = report === undefined;
 }
 document.getElementById("run").onclick = run;
+document.getElementById("compare").onclick = () => { input.value = "{\n  \"incident\": \"cloud_exposure\",\n  \"severity\": \"high\",\n  \"lead\": \"Cloud IR lead\",\n  \"evidence\": [\n    \"Cloud audit event\"\n  ]\n}"; run(); };
 document.getElementById("reset").onclick = () => { input.value = fixture; run(); };
 document.getElementById("save").onclick = () => {
   if (report === undefined) return;

@@ -43,3 +43,9 @@ Open `index.html` in a modern browser or run `node test.mjs` with Node.js 20+. T
 ## Scope
 
 Synthetic lab inputs and deterministic rules. Review results before applying them to a real incident. The workflow currently uses rules or templates and has no model integration.
+
+## What this demonstrates
+
+**Draft a playbook with evidence preservation and review gates.** Switch from account compromise to cloud exposure and inspect how containment changes. Both paths preserve evidence before changes and produce a draft for the incident lead to validate.
+
+[Reference guidance](https://csrc.nist.gov/pubs/sp/800/61/r3/final)
